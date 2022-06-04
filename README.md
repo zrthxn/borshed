@@ -1,5 +1,3 @@
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -172,13 +170,3 @@ You are requested to follow the contribution guidelines specified in [CONTRIBUTI
 ##  :page_facing_up: License
 
 Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[csivitu-shield]: https://img.shields.io/badge/csivitu-csivitu-blue
-[csivitu-url]: https://csivit.com
-[issues-shield]: https://img.shields.io/github/issues/csivitu/Template.svg?style=flat-square
-[issues-url]: https://github.com/ashikka/golf-it/issuesa
