@@ -1,12 +1,22 @@
-BUILDER = cargo build
+BUILDER = cargo
+BUILD_FLAGS = \
+
+BIN = target/debug/borshed
 
 ## == Targets ==
-.PHONY: all
+.PHONY: all build clean dist run
 
-all: build dist clean
+all: build clean
 
 build:
-	$(BUILDER)
+	@$(BUILDER) build $(BUILD_FLAGS)
 
-dist: build
+clean:
+	@echo Clean
+
+run: build clean
+	@./$(BIN)
+
+# Package for distribution
+dist: build clean
 	@cp target/release bin
