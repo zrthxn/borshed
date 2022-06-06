@@ -1,31 +1,32 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/zrthxn/borshed">
-    <img src="./docs/logo.png" alt="Logo" width="80">
-  </a>
-
-  <b><h2 align="center">BorshEd</h2></b>
+  <b>
+    <p align="center">
+      <h3 align="center" style="font-size: 20px; letter-spacing: 20px; margin: 0;">BORSHED</h3><br>
+      <h3 align="center" style="font-size: 16px; margin: 0;">A command line editor for Borsh.</h3>
+    </p>
+    <h1 align="center"></h1>
+  </b>
 
   <p align="center">
-    A command line editor for Borsh data.
-Solana uses a data serialization system/algorithm called Borsh (Binary Object Representation Serializer for Hashing) which can be used to essentially write an in-program object to a "secure" binary format.
+    An editor for files containing data serialized using the Borsh algorithm, for use with Solana ecosystem tools and the Solana Program Library. This allows you to store an in-memory object to disk and inspect or edit it manually.
     <br />
-    <a href="https://github.com/ashikka/golf-it"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
+    <br /><b>
     <a href="https://github.com/zrthxn/borshed/issues">Report Bug</a>
     ·
-    <a href="https://github.com/zrthxn/borshed/issues">Request Feature</a>
+    <a href="https://github.com/zrthxn/borshed/issues">Request Feature</a></b>
   </p>
 </p>
 
 
+<!-- ABOUT THE PROJECT -->
+<h1 align="center">About The Project</h1>
+
+Solana uses a data serialization system/algorithm called Borsh (Binary Object Representation Serializer for Hashing) which can be used to essentially write an in-program object to a secure binary format.
+This is a command line program that enables editing of files containing data serialized using the Borsh algorithm.
 
 <!-- TABLE OF CONTENTS -->
-## :dart: Table of Contents
-
-* [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -36,125 +37,41 @@ Solana uses a data serialization system/algorithm called Borsh (Binary Object Re
 * [License](#license)
 * [Contributors](#contributors-)
 
+## How we built it
 
+Because the location of the struct is being provided at runtime, either it could be directly loaded dynamically from a dylib (in which case we don't know enough to reconstruct the source except from what lldb can provide), or at runtime you could trigger compilation of a user-provided cargo project and dynamically link to that, which means there's enough info to reconstruct the source. I agree the second option seems a bit strange, but otherwise I can't see where the information needed to reconstruct the source will come from—if we need to relate data from before (source) and after (binary) the compilation process we need to be in control of compilation I think. The borsch format of the data saved to the binary can't itself contain enough information to reconstruct the source, because borsch serialises structs that have already potentially been subject to compiler optimisations (e.g. name mangling)
 
-<!-- ABOUT THE PROJECT -->
-##  :open_book: About The Project
-
-<p align="center">
-  <a href="https://github.com/zrthxn/borshed">
-    <img src="./docs/demo.gif" />
-  </a>
-</p>
-
-## :gear: How we built it
-
-## :rocket: What's next for Golf-it!
+## What's next for Borshed
 
 <!-- GETTING STARTED -->
-## :airplane: Getting Started
+## Getting Started
 
-To get a local copy up and running follow these simple steps.
+
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* yarn
-```sh
-npm install -g yarn
-```
+
 
 ### Installation
- 
-1. Clone the repo
-```sh
-git clone https://github.com/ashikka/golf-it.git
-```
-2. Install yarn packages
-```sh
-yarn
-```
-3. Add necessary environment variables to the project using: 
-```sh
-{
-        echo 'API_KEY='
-        echo 'AUTH_DOMAIN='
-        echo 'PROJECT_ID='
-        echo 'STORAGE_BUCKET='
-        echo 'MESSAGING_SENDER_ID='
-        echo 'APP_ID='
 
-} >> .env
-```
+
+
 <!-- USAGE EXAMPLES -->
-## :wrench: Usage
+## Usage
 
-Start the project locally by following these steps. 
-
-1. Run a Redis broker on your system
-
-```sh
-docker run -p6379:6379 redis
 ```
-
-2. Start the worker which is going to interact with the library `code-executor`.
-```sh
-cd backend
-
-ts-node worker.ts
+borshed data.bin path::to::struct
 ```
-3. Start the backend using:
-```sh 
-yarn run dev
-```
-4. Start the frontend using:
-```sh
-cd frontend
-
-yarn start
-```
-## :triangular_flag_on_post: Routes
-The backend of the project supports the following routes: 
-
-### 1. Code submission
-```http
-POST /code/submission/:questionName
-```
-
-| Parameter | Type     | Description                     |
-| :--------: | :-------: | :------------------------------: |
-| `params`    | `string` | questionName |
-| `body`    | `string` |  language |
-| `body`    | `string` | code |
-| `body`    | `Date` | submitTime |
-
-
-### 2. Create new room
-```http
-POST /room/create
-```
-| Parameter | Type     | Description                     |
-| :--------: | :-------: | :------------------------------: |
-| `body`    | `string` | clientId|
-| `body`    | `number` |  payload |
-
-### 3. Get room
-```http
-GET /room/:roomId
-```
-| Parameter | Type     | Description                     |
-| :--------: | :-------: | :------------------------------: |
-| `params`    | `string` | roomId|
 
 <!-- ROADMAP -->
-## :world_map: Roadmap
+## Roadmap
 
-See the [open issues](https://github.com/ashikka/golf-it/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/ashikka/borshed/issues) for a list of proposed features (and known issues).
 
 
 
 <!-- CONTRIBUTING -->
-## :mechanical_arm: Contributing
+## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -164,9 +81,7 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push -u origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-You are requested to follow the contribution guidelines specified in [CONTRIBUTING.md](./CONTRIBUTING.md) while contributing to the project :smile:.
-
 <!-- LICENSE -->
-##  :page_facing_up: License
+## License
 
 Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
