@@ -38,3 +38,9 @@ fn main() {
     // 2. Call $EDITOR with this text version, let the user edit
     // 3. On save, serialize the edited object and write to file
 }
+
+macro_rules! get_struct {
+    ($( $x: expr ), *) => {
+        
+    };
+}
