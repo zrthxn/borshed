@@ -3,7 +3,7 @@
 <p align="center">
   <b>
     <p align="center">
-      <h3 align="center" style="font-size: 20px; letter-spacing: 20px; margin: 0;">BORSHED</h3><br>
+      <h3 align="center" style="font-size: 30px; letter-spacing: 10px; margin: 0;">B O R S H E D</h3><br>
       <h3 align="center" style="font-size: 16px; margin: 0;">A command line editor for Borsh.</h3>
     </p>
     <h1 align="center"></h1>
