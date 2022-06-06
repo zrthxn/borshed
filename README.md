@@ -37,25 +37,6 @@ This is a command line program that enables editing of files containing data ser
 * [License](#license)
 * [Contributors](#contributors-)
 
-## How we built it
-
-Because the location of the struct is being provided at runtime, either it could be directly loaded dynamically from a dylib (in which case we don't know enough to reconstruct the source except from what lldb can provide), or at runtime you could trigger compilation of a user-provided cargo project and dynamically link to that, which means there's enough info to reconstruct the source. I agree the second option seems a bit strange, but otherwise I can't see where the information needed to reconstruct the source will come from—if we need to relate data from before (source) and after (binary) the compilation process we need to be in control of compilation I think. The borsch format of the data saved to the binary can't itself contain enough information to reconstruct the source, because borsch serialises structs that have already potentially been subject to compiler optimisations (e.g. name mangling)
-
-## What's next for Borshed
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-
-
-### Prerequisites
-
-
-
-### Installation
-
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
